@@ -60,6 +60,7 @@
 #### Search
 
 1. Everything
+2. Listary
 
 #### Net
 
@@ -73,4 +74,5 @@
 
 1. ScreenRuler
 2. Clover
+3. Geek
 
