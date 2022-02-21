@@ -1,4 +1,4 @@
-### 从Dump中提取C#代码
+#### 从Dump中提取C#代码
 
 1. 简单程序
 
@@ -50,6 +50,63 @@
    ```
 
    （3）保存模块，同简单程序
+
+#### 堆
+
+1. 查看托管堆状态
+
+   
+
+#### 线程
+
+1. 查看线程整体状况
+
+   ```bash
+   0:000> !t
+   ThreadCount:      60
+   BackgroundThread: 38
+   DeadThread:       22
+                                                                            Lock  
+          ID OSID ThreadOBJ    State GC Mode     GC Alloc Context  Domain   Count Apt Exception
+     11    1 2c24 02487038     28220 Preemptive  00000000:00000000 010df4f8 0     Ukn 
+     ...
+   ```
+
+2. 查看线程池整体状况
+
+   ```bash
+   0:000> !tp
+   CPU utilization: 97%
+   Worker Thread: Total: 21 Running: 21 Idle: 0 MaxLimit: 8191 MinLimit: 8
+   Work Request in Queue: 23
+   ...
+   --------------------------------------
+   Number of Timers: 0
+   --------------------------------------
+   Completion Port Thread:Total: 1 Free: 1 MaxFree: 16 CurrentLimit: 1 MaxLimit: 1000 MinLimit: 8
+   ```
+
+3. 查看所有线程的托管栈信息
+
+   ```bash
+   0:000> ~ *e !clrstack
+   OS Thread Id: 0x8d8 (44)
+   Child SP       IP Call Site
+   1ad8d750 7759f901 [InlinedCallFrame: 1ad8d750] 
+   ...
+   OS Thread Id: 0x26a0 (52)
+   Child SP       IP Call Site
+   1d32d9d0 7759f901 [InlinedCallFrame: 1d32d9d0] 
+   ...
+   ```
+
+4. 查看所有线程的托管和非托管栈信息
+
+   ```bash
+   0:000> ~ *e !dumpstack
+   ```
+
+   
 
 
 
