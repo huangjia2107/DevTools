@@ -25,8 +25,13 @@ ansible 2.10.8
   ansible python module location = /usr/lib/python3/dist-packages/ansible
   executable location = /usr/bin/ansible
   python version = 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0]
+```
 
+#### SSHpass
 
+```bash
+# 用于支持 ansible playbook 中使用 ssh 密码进行 synchronize
+> sudo apt install sshpass
 ```
 
 #### Docker && Docker Compose
@@ -100,5 +105,3 @@ secret_key=eMyJLuLsDTlqjOinT1mJnZA7u9NkvlqCvAtmmiz3
 # 通过 ansible 安装
 sudo ansible-playbook -i inventory install.yml
 ```
-
-
