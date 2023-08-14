@@ -102,3 +102,26 @@
    ```bash
    $ dotnet --info
    ```
+
+#### 22.04 上安装 3.1
+
+1. 安装 .NET 之前，将 Microsoft 包签名密钥添加到受信任密钥列表，并添加包存储库
+   
+   ```bash
+   $ wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb 
+   $ sudo dpkg -i packages-microsoft-prod.deb
+   $ rm packages-microsoft-prod.deb
+   ```
+
+2. 安装 libssl1.1
+   
+   ```bash
+   $ wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb 
+   $ sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
+   ```
+
+3. 安装 3.1
+   
+   ```bash
+   $ sudo apt install aspnetcore-runtime-3.1
+   ```
