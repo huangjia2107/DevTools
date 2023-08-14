@@ -123,5 +123,6 @@
 3. 安装 3.1
    
    ```bash
+   $ sudo apt update
    $ sudo apt install aspnetcore-runtime-3.1
    ```
