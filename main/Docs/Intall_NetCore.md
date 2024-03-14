@@ -118,6 +118,11 @@
    ```bash
    $ wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb 
    $ sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
+   
+   //或者
+   $ echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
+   $ sudo apt-get update
+   $ sudo apt-get install libssl1.1
    ```
 
 3. 安装 3.1
@@ -126,3 +131,11 @@
    $ sudo apt update
    $ sudo apt install aspnetcore-runtime-3.1
    ```
+
+#### 卸载 NetCore
+
+```bash
+$ sudo apt remove 'dotnet*' 'aspnet*' 'netstandard*'
+$ sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list
+$ sudo apt update
+```
